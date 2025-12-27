@@ -1,0 +1,13 @@
+langchain
+langchain-community
+llama-cpp-python
+langchain-chroma
+chromadb
+sentence-transformers
+langchain-huggingface
+unstructured
+markdown
+streamlit
+pydantic
+huggingface_hub
+pypdf
