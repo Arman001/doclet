@@ -30,6 +30,7 @@ Doclet is a **local, privacy-focused RAG (Retrieval-Augmented Generation) assist
 - 4GB+ RAM recommended
 - ~2GB disk space for model and dependencies
 - No GPU required!
+- **Note**: Close resource-intensive applications (video editors, screen recorders) for optimal performance
 
 ### Installation
 
@@ -141,6 +142,32 @@ chunk_overlap = 50            # Overlap between chunks
    - Response is cleaned to remove artifacts and hallucinations
    - Citations with relevance scores are displayed
 
+## ⚡ Performance Expectations
+
+### Typical Response Times (CPU-only):
+
+| System Load | Query Complexity | Response Time |
+|-------------|------------------|---------------|
+| Light (just Doclet) | Simple | 10-15 seconds |
+| Light | Complex | 15-20 seconds |
+| Heavy (OBS, browsers, etc.) | Simple | 20-30 seconds |
+| Heavy | Complex | 30-45 seconds |
+
+**Factors affecting speed:**
+- **CPU**: Modern CPUs (2020+) perform better
+- **RAM availability**: 8GB+ recommended
+- **System load**: Close unnecessary applications
+- **Query complexity**: Longer questions take more time
+- **Context size**: More retrieved documents = slower
+- **Background processes**: Screen recording software (OBS) significantly impacts performance
+
+**Performance Tips:**
+1. Close OBS Studio and screen recorders before using Doclet
+2. Close browser tabs you're not using
+3. Reduce `MAX_CONTEXT_CHUNKS` to 2 for faster responses
+4. Use shorter, more specific questions
+5. Consider upgrading to the 3B model if you have 16GB+ RAM for better quality at similar speeds
+
 ## 🎯 Use Cases
 
 - 📖 **Technical Documentation**: Query your project docs, API references, or manuals
@@ -156,7 +183,8 @@ chunk_overlap = 50            # Overlap between chunks
 - **Context Window**: Limited to ~2K tokens, which restricts complex multi-document reasoning
 - **Language**: Optimized for English; other languages may have reduced accuracy
 - **Complex Queries**: Best for straightforward factual questions rather than creative or abstract reasoning
-- **Speed**: CPU inference takes 2-5 seconds per query (vs milliseconds with GPU)
+- **Speed**: CPU inference takes 10-30 seconds per query depending on system load and complexity (faster without screen recording software running)
+- **Resource Usage**: Performance degrades when running alongside resource-intensive applications (OBS, video editors, etc.)
 
 ## 🛠️ Troubleshooting
 
